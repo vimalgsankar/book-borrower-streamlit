@@ -78,6 +78,7 @@ def init_db():
         author          TEXT    NOT NULL,
         genre           TEXT    NOT NULL,
         description     TEXT    DEFAULT '',
+        image_url       TEXT    DEFAULT '',
         avg_rating      REAL    DEFAULT 0.0,
         created_at      TEXT    NOT NULL DEFAULT (datetime('now'))
     );

@@ -387,9 +387,10 @@ def _render_manage_books():
     st.write("Edit title, author, genre, or copies directly:")
     with st.container(border=True):
         edited_books = st.data_editor(
-            books[['id', 'title', 'author', 'genre', 'total_copies', 'available_copies', 'avg_rating']],
+            books[['id', 'image_url', 'title', 'author', 'genre', 'total_copies', 'available_copies', 'avg_rating']],
             column_config={
                 "id": None,
+                "image_url": st.column_config.ImageColumn("Cover", width="small"),
                 "avg_rating": st.column_config.NumberColumn("Rating", disabled=True),
                 "total_copies": st.column_config.NumberColumn("Total", disabled=True),
                 "available_copies": st.column_config.NumberColumn("Available", disabled=True)

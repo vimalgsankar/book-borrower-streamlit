@@ -138,6 +138,8 @@ def _render_borrow():
         with cols[i % 3]:
             st.markdown(f'<div class="fade-in {stagger_class}">', unsafe_allow_html=True)
             with st.container(border=True):
+                if 'image_url' in book and pd.notna(book['image_url']) and book['image_url']:
+                    st.image(book['image_url'], use_container_width=True)
                 st.markdown(f"<h4 style='margin-bottom: 0; color: #1f2937;'>{book['title']}</h4>", unsafe_allow_html=True)
                 st.caption(f"by {book['author']}")
                 
